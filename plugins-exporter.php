@@ -7,6 +7,7 @@ Author: Mirco Babini
 Version: 1.0
 Author URI: http://github.com/mirkolofio
 */
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 $plugin_basename = @$_GET['pe-export'];
 if (is_admin () && $plugin_basename !== null) {
@@ -36,6 +37,7 @@ if (is_admin () && $plugin_basename !== null) {
 if (is_admin ()) {
 	
 	if (true || isset ($_GET['pe-on'])) {
+		
 		
 		$plugins = get_plugins ();
 		foreach (array_keys ($plugins) as $plugin_basename) {
