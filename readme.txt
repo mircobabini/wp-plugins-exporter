@@ -18,14 +18,14 @@ Just click it and you're done: the archive will be downloaded.
 This add-on can be treated as both a WP plugin and a theme include.
 
 **Install as Plugin**
-Copy the 'plugins-exporter' folder into your plugins folder or simply upload the archive
+Copy the 'wp-plugins-exporter' folder into your plugins folder or simply upload the archive
 Activate the plugin via the Plugins Admin Page
 
 **Include within theme**
-Copy the 'plugins-exporter' folder into your theme folder (can use sub folders). You can place the folder anywhere inside the 'wp-content' directory
-Edit your functions.php file and add the code below (Make sure the path is correct to include the plugins-exporter.php file)
+Copy the 'wp-plugins-exporter' folder into your theme folder (can use sub folders). You can place the folder anywhere inside the 'wp-content' directory
+Edit your functions.php file and add the code below (Make sure the path is correct to include the wp-plugins-exporter.php file)
 
-`include_once('plugins-exporter/plugins-exporter.php');
+`include_once('wp-plugins-exporter/wp-plugins-exporter.php');
 `
 
 == Frequently asked questions ==

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Plugins Exporter
-Plugin URI: http://github.com/mirkolofio/plugins-exporter
+Plugin URI: http://github.com/mirkolofio/wp-plugins-exporter
 Description: Easily (one-click) export any installed Wordpress plugin
 Author: Mirco Babini
 Version: 1.0
