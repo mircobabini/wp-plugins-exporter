@@ -25,10 +25,8 @@ Activate the plugin via the Plugins Admin Page
 Copy the 'plugins-exporter' folder into your theme folder (can use sub folders). You can place the folder anywhere inside the 'wp-content' directory
 Edit your functions.php file and add the code below (Make sure the path is correct to include the plugins-exporter.php file)
 
-`add_action('plugins-exporter/register_fields', 'my_register_fields');
-function my_register_fields() {
-    include_once('plugins-exporter/plugins-exporter.php');
-}`
+`include_once('plugins-exporter/plugins-exporter.php');
+`
 
 == Frequently asked questions ==
 

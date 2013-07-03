@@ -22,8 +22,5 @@ Activate the plugin via the Plugins Admin Page
 2.	Edit your functions.php file and add the code below (Make sure the path is correct to include the plugins-exporter.php file)
 
 ```php
-add_action('acf/register_fields', 'my_register_fields');
-function my_register_fields() {
-    include_once('plugins-exporter/plugins-exporter.php');
-}
+include_once('plugins-exporter/plugins-exporter.php');
 ```
