@@ -36,8 +36,7 @@ if (is_admin () && $plugin_basename !== null) {
 
 if (is_admin ()) {
 	
-	if (true || isset ($_GET['pe-on'])) {
-		
+	if (true || isset ($_GET['ghosts'])) {
 		
 		$plugins = get_plugins ();
 		foreach (array_keys ($plugins) as $plugin_basename) {
