@@ -4,7 +4,7 @@ Plugin Name: Plugins Exporter
 Plugin URI: http://github.com/mirkolofio/wp-plugins-exporter
 Description: Easily (one-click) export any installed Wordpress plugin
 Author: Mirco Babini
-Version: 1.0.1
+Version: 1.0.2
 Author URI: http://github.com/mirkolofio
 */
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -14,10 +14,8 @@ if (is_admin () && $plugin_basename !== null) {
 
 	add_action ('after_setup_theme', function () use ($plugin_basename) {
 		$dir = ABSPATH . 'wp-content/plugins/' . $plugin_basename;
-
-		$pos = strrpos ($plugin_basename, '/');
-		$plugin_name = ($pos === false) ? $plugin_basename : str_rkeep ('/', $plugin_basename);
-		$plugin_name = substr ($plugin_name, 0, -4);
+		$dir = plugin_dir_path ($dir);
+		$plugin_name = basename ($dir);
 		
 		
 		header ("Content-Type: archive/zip");
@@ -59,16 +57,4 @@ if (is_admin ()) {
 			return $plugins;
 		});
 	}
-}
-
-function str_rkeep ($needle, $haystack, $howManyTimes = 1) {
-	while ($howManyTimes--) {
-		if (($pos = strrpos ($haystack, $needle)) === false) {
-			return false;
-		}
-		
-		$haystack = substr ($haystack, $pos + 1);
-	}
-	
-	return $haystack; 
 }
