@@ -15,8 +15,13 @@ if (is_admin () && $plugin_basename !== null) {
 	add_action ('after_setup_theme', function () use ($plugin_basename) {
 		$dir = ABSPATH . 'wp-content/plugins/' . $plugin_basename;
 
+		$pos = strrpos ($plugin_basename, '/');
+		$plugin_name = ($pos === false) ? $plugin_basename : str_rkeep ('/', $plugin_basename);
+		$plugin_name = substr ($plugin_name, 0, -4);
+		
+		
 		header ("Content-Type: archive/zip");
-		header ("Content-Disposition: attachment; filename={$plugin_basename}.zip");
+		header ("Content-Disposition: attachment; filename={$plugin_name}.zip");
 		$tmp_zip = tempnam ("tmp", "tempname") . ".zip";
 
 		chdir ($dir);
@@ -54,4 +59,16 @@ if (is_admin ()) {
 			return $plugins;
 		});
 	}
+}
+
+function str_rkeep ($needle, $haystack, $howManyTimes = 1) {
+	while ($howManyTimes--) {
+		if (($pos = strrpos ($haystack, $needle)) === false) {
+			return false;
+		}
+		
+		$haystack = substr ($haystack, $pos + 1);
+	}
+	
+	return $haystack; 
 }
